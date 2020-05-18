@@ -5,11 +5,11 @@ app.config(["$routeProvider", "$locationProvider", "$translateProvider", functio
     // $routeProvider
     //     .when('/builder', {
     //         templateUrl: "/demo.html",
-    //         controller: 'DemoController'
+    //         controller: 'AppController'
     //     })
     //     .when("/abc", {
     //         templateUrl: "/demo-viewer.html",
-    //         controller: 'DemoController'
+    //         controller: 'AppController'
     //     });
 
     $translateProvider.useStaticFilesLoader({
@@ -19,7 +19,7 @@ app.config(["$routeProvider", "$locationProvider", "$translateProvider", functio
     $translateProvider.preferredLanguage('en');
 }]);
 
-app.controller('DemoController', function ($scope, $q, $http, $translate, mwFormResponseUtils) {
+app.controller('AppController', function ($scope, $q, $http, $translate, mwFormResponseUtils) {
     var ctrl = this;
     ctrl.cmergeFormWithResponse = false;
     ctrl.cgetQuestionWithResponseList = false;

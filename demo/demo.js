@@ -6,7 +6,7 @@ angular.module('app', ['ui.bootstrap', 'mwFormBuilder', 'mwFormViewer', 'mwFormU
         });
         $translateProvider.preferredLanguage('en');
     })
-    .controller('DemoController', function($q,$http, $translate, mwFormResponseUtils, $rootScope) {
+    .controller('AppController', function($q,$http, $translate, mwFormResponseUtils, $rootScope) {
 
         var ctrl = this;
         ctrl.mergeFormWithResponse = true;
