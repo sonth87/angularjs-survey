@@ -33,6 +33,7 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
     ctrl.formData = null;
     ctrl.listSurvey = [];
     ctrl.status = 'NEW'; // 'NEW' | 'APPROVED' | 'UNAPPROVED'
+    ctrl.builderMode = false;
     setTimeout(function () {
         $http.get('list-survey.json')
             .then(function (res) {
@@ -104,6 +105,10 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
 
         return d.promise;
     };
+
+    ctrl.backToList = function() {
+        ctrl.builderMode = false;
+    }
 
     ctrl.resetViewer = function () {
         if (ctrl.formViewer.reset) {

@@ -63,7 +63,7 @@
             <md-tab label="Builder">
                 <md-content class="md-padding tab-content">
                     <div layout="row" layout-align="center" ng-if="ctrl.selectedTabIndex===1">
-                        <div flex-gt-sm="66" flex-sm="90" style="position: relative;">
+                        <div flex-gt-sm="66" flex-sm="90" class="form-container">
                             <div layout="row" layout-align="center">
                                 <div>
                                     <md-button class="md-primary" aria-label="Reset" ng-click="ctrl.resetBuilder()">
@@ -79,10 +79,16 @@
                             <md-button class="md-caption" style="position: absolute; top: 50px; right: 0; z-index: 1; border-radius: 0 0 0 4px; color: #FFF;min-width: auto; min-height: auto; margin: 0; line-height: 12px; font-size: 12px;" layout-padding ng-style="ctrl.formData.status === 'NEW' && {'background-color': '#4caf50'} || ctrl.formData.status === 'APPROVED' && {'background-color': '#2196f3'} || {'background-color': '#ff9800'}">
                                 {{ ctrl.formData.status }}</md-button>
                             <mw-form-builder api="ctrl.formBuilder" options="ctrl.optionsBuilder" form-data="ctrl.formData" form-status="ctrl.formStatus" read-only="ctrl.builderReadOnly" on-image-selection="ctrl.onImageSelection()"></mw-form-builder>
+                        </div>
+                    </div>
 
-                            <md-button class="md-primary md-raised" type="submit" role="button" ng-click="ctrl.saveFormBuilder()" translate="mwForm.buttons.save">
-                                Save
-                            </md-button>
+                    <div class="form-save-btn">
+                        <div layout="row" layout-align="center">
+                            <div flex-gt-sm="66" flex-sm="90">
+                                <md-button class="md-primary md-raised" type="submit" role="button" ng-click="ctrl.saveFormBuilder()" translate="mwForm.buttons.save">
+                                    Save
+                                </md-button>
+                            </div>
                         </div>
                     </div>
                 </md-content>
