@@ -10,11 +10,13 @@
                 </md-subheader>
                 <md-list-item class="md-3-line" ng-repeat="survey in ctrl.listSurvey" ng-click="ctrl.editSurvey(survey)">
                     <div layout="row" style="width: 100%">
-                        <div class="md-list-item-text" layout="column" flex="90">
+                        <div class="md-list-item-text" layout="column" flex="100">
                             <h3>{{ survey.name }}</h3>
                             <p>{{ survey.description }}</p>
                         </div>
-                        <md-switch ng-model="survey.status" class="md-primary" aria-label="Status" ng-change="ctrl.updateStatus($index, survey)"></md-switch>
+                        <!-- <md-switch ng-model="survey.status" class="md-primary" aria-label="Status" ng-change="ctrl.updateStatus($index, survey)"></md-switch> -->
+                        <div class="md-caption" style="height: 12px; line-height: 12px; border-radius: 20px; color: #FFF;" layout-padding ng-style="survey.status === 'NEW' && {'background-color': '#4caf50'} || survey.status === 'APPROVED' && {'background-color': '#2196f3'} || {'background-color': '#ff9800'}">
+                            {{ survey.status }}</div>
                     </div>
                 </md-list-item>
             </md-list>

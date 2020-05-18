@@ -1339,7 +1339,6 @@ angular.module('mwFormBuilder').directive('mwFormBuilder', ["$rootScope", functi
                     }
                 }
             };
-            
 
             ctrl.numberOfPages=function(){
                 return Math.ceil(ctrl.formData.pages.length/ctrl.options.pageSize);                

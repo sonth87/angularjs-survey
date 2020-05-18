@@ -2,7 +2,7 @@
   "name": "form name",
   "description": "description",
   "surveyID": "1234567890",
-  "status": true,
+  "status": "UNAPPROVED",
   "autoStart": true,
   "pages": [
     {
@@ -361,7 +361,7 @@
   "name": "khảo sát 2",
   "description": "ahihi",
   "surveyID": "fdgt456534g4563tgdfthg45e5325uryh5346",
-  "status": false,
+  "status": "NEW",
   "autoStart": true,
   "pages": [
     {

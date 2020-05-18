@@ -2,7 +2,7 @@
   "name": "form name",
   "description": "description",
   "surveyID": "1234567890",
-  "status": "active",
+  "status": "APPROVED",
   "autoStart": true,
   "pages": [
     {

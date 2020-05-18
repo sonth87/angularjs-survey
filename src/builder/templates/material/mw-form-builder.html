@@ -2,7 +2,6 @@
     <form name="ctrl.form" role="form" novalidate>
         <div class="mw-title-page">
 
-
             <md-input-container class="md-block">
                 <mw-label label-for="formName" label-key="mwForm.form.name"></mw-label>
                 <input type="text" class="form-control" name="formName" id="formName" ng-model="ctrl.formData.name" ng-readonly="ctrl.readOnly" required>
@@ -14,7 +13,7 @@
                 <textarea msd-elastic class="form-control" name="formDescription" ng-model="ctrl.formData.description" id="formDescription" ng-readonly="ctrl.readOnly"/>
             </md-input-container>
 
-            <md-switch ng-model="ctrl.formData.status" class="md-primary" aria-label="Status">Status</md-switch>
+            <!-- <md-switch ng-model="ctrl.formData.status" class="md-primary" aria-label="Status">Status</md-switch> -->
         </div>
 
 
