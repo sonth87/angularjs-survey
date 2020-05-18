@@ -12,6 +12,8 @@ You can install this package through `Bower` :
 
     npm install -g bower
     bower install
+    npm install
+    npm install gulp-sass --save-dev
 
     
     gulp serve

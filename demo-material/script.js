@@ -32,14 +32,14 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
     ctrl.languages = ['en', 'pl', "es", 'ru'];
     ctrl.formData = null;
     ctrl.listSurvey = [];
-    ctrl.status = true;
+    ctrl.status = 'NEW' | 'APPROVED' | 'UNAPPROVED';
     setTimeout(function () {
         $http.get('list-survey.json')
             .then(function (res) {
                 ctrl.listSurvey = res.data;
             });
     }, 1000);
-
+console.log(ctrl.status)
     // setTimeout(function () {
         $http.get('form-data.json')
             .then(function (res) {
