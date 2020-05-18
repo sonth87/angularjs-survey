@@ -1,0 +1,30 @@
+<div class="mw-form-code-builder-wrapper abcabc">
+    <div class="mw-form-code-builder" ng-class="{'ng-submitted':ctrl.formSubmitted}">
+        <div ng-form="ctrl.form" ng-if="!ctrl.isPreview">
+            <div class="form-horizontal">
+                <md-input-container class="md-block">
+                    <mw-label label-for="code-text-{{ctrl.id}}" label-key="mwForm.code.text"></mw-label>
+                    <input type="text" name="text" ng-attr-id="code-text-{{ctrl.id}}" ng-model="ctrl.code.text" ng-readonly="ctrl.readOnly" required>
+                </md-input-container>
+            </div>
+
+            <br/> <br/>
+            <div layout="row" layout-align="start center">
+                <div flex="20">
+                    <md-button class="md-primary md-raised" type="button" role="button" ng-click="ctrl.save()" translate="mwForm.buttons.questionReady">
+                        Ready
+                    </md-button>
+                </div>
+            </div>
+
+        </div>
+        <div class="mw-preview" ng-if="ctrl.isPreview">
+            <div class="mw-question-text">
+                <b>Parameter : {{ctrl.code.text}}</b>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

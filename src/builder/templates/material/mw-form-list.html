@@ -1,0 +1,23 @@
+<div class="mw-form-list">
+    <div flex-gt-sm="100" flex>
+        <md-content>
+            <md-list flex ng-if="ctrl.listSurvey">
+                <md-subheader class="md-no-sticky">
+                    <div>{{ctrl.listSurvey.length}} khảo sát</div>
+                    <div style="position: absolute; right: 0; top: 0;">
+                        <md-button class="md-fab md-mini md-primary" ng-click="ctrl.addNewSurvey()"><i class="fa fa-plus"></i></md-button>
+                    </div>
+                </md-subheader>
+                <md-list-item class="md-3-line" ng-repeat="survey in ctrl.listSurvey" ng-click="ctrl.editSurvey(survey)">
+                    <div layout="row" style="width: 100%">
+                        <div class="md-list-item-text" layout="column" flex="90">
+                            <h3>{{ survey.name }}</h3>
+                            <p>{{ survey.description }}</p>
+                        </div>
+                        <md-switch ng-model="survey.status" class="md-primary" aria-label="Status" ng-change="ctrl.updateStatus($index, survey)"></md-switch>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+</div>
