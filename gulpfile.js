@@ -134,11 +134,11 @@ var gulpWatch = function(){
 gulp.task('default-watch', gulp.series('default', ()=>{ /*browserSync.reload()*/ }));
 
 gulp.task('serve', gulp.series('default', ()=>{
-    browserSyncInit("demo-material");
+    browserSyncInit("app-material");
     gulpWatch();
 }));
 
 gulp.task('serve-bootstrap', gulp.series('default', ()=>{
-    browserSyncInit("demo");
+    browserSyncInit("app-bootstrap");
     gulpWatch();
 }));
