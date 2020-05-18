@@ -8,14 +8,13 @@ Angular.js survey / form builder inspired by Google Forms
 
 ## Bower
 
-You can install this package through `Bower` :
+Install :
 
     npm install -g bower
     bower install
     npm install
-    npm install gulp-sass --save-dev
 
-    
+Run :
     gulp serve
 
 <!-- ## Wiki -->

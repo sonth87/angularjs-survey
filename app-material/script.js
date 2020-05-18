@@ -41,12 +41,12 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
             });
     }, 1000);
 
-    // setTimeout(function () {
+    setTimeout(function () {
         $http.get('form-data.json')
             .then(function (res) {
                 ctrl.formData = res.data;
             });
-    // }, 2000);
+    }, 1000);
 
     ctrl.selectedTabIndex = 0;
     ctrl.formBuilder = {};
