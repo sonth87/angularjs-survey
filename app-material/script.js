@@ -70,10 +70,10 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
     ctrl.formStatus = {};
     ctrl.responseData = {};
     setTimeout(function () {
-    $http.get('response-data.json')
-        .then(function (res) {
-            ctrl.responseData = res.data || {};
-        });
+        $http.get('response-data.json')
+            .then(function (res) {
+                ctrl.responseData = res.data || {};
+            });
     }, 2000);
 
     $http.get('template-data.json')
@@ -106,7 +106,7 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
         return d.promise;
     };
 
-    ctrl.backToList = function() {
+    ctrl.backToList = function () {
         ctrl.builderMode = false;
     }
 
@@ -121,8 +121,8 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
             ctrl.formBuilder.reset();
         }
     };
-    
-    ctrl.saveFormBuilder = function() {
+
+    ctrl.saveFormBuilder = function () {
         console.log(ctrl.formData)
     }
 
@@ -171,7 +171,7 @@ app.controller('LoginController', function ($scope, $mdDialog, $interval) {
             templateUrl: '/login.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose: true
+            clickOutsideToClose: true,
         })
             .then(function (answer) {
                 $scope.status = 'ok';
@@ -191,6 +191,11 @@ app.controller('LoginController', function ($scope, $mdDialog, $interval) {
 
         $scope.answer = function (answer) {
             $mdDialog.hide(answer);
+        };
+
+        $scope.loginModel = {
+            username: 'test',
+            password: 'password'
         };
     }
 });
