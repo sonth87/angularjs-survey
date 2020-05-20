@@ -1,17 +1,6 @@
 var app = angular.module('app', ['ngMaterial', 'ngRoute', 'mwFormBuilder', 'mwFormViewer', 'mwFormUtils', 'pascalprecht.translate', 'monospaced.elastic']);
 
-app.config(["$routeProvider", "$locationProvider", "$translateProvider", function ($routeProvider, $locationProvider, $translateProvider) {
-    // $locationProvider.html5Mode(true);
-    // $routeProvider
-    //     .when('/builder', {
-    //         templateUrl: "/demo.html",
-    //         controller: 'AppController'
-    //     })
-    //     .when("/abc", {
-    //         templateUrl: "/demo-viewer.html",
-    //         controller: 'AppController'
-    //     });
-
+app.config(["$translateProvider", function ($translateProvider) {
     $translateProvider.useStaticFilesLoader({
         prefix: '../dist/i18n/',
         suffix: '/angular-surveys.json'
@@ -19,7 +8,7 @@ app.config(["$routeProvider", "$locationProvider", "$translateProvider", functio
     $translateProvider.preferredLanguage('en');
 }]);
 
-app.controller('AppController', function ($scope, $q, $http, $translate, mwFormResponseUtils) {
+app.controller('AppViewerController', function ($scope, $q, $http, $translate, mwFormResponseUtils) {
     var ctrl = this;
     ctrl.cmergeFormWithResponse = false;
     ctrl.cgetQuestionWithResponseList = false;
@@ -35,13 +24,6 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
     ctrl.status = 'NEW'; // 'NEW' | 'APPROVED' | 'UNAPPROVED'
     ctrl.builderMode = false;
     path = 'https://10.124.55.78:9002/partner/v2';
-
-    setTimeout(function () {
-        $http.get(`${path}/survey/list`)
-            .then(function (res) {
-                ctrl.listSurvey = res.data;
-            });
-    }, 1000);
 
     ctrl.selectedTabIndex = 0;
     ctrl.formBuilder = {};
@@ -111,14 +93,16 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
         }
     };
 
-    ctrl.getFormData = function (code) {
-        var url = `${path}/survey/details?code=${code}`;
-        $http.get(url)
+    ctrl.getFormData = function () {
+        const url = window.location;
+        var query = url.search.substring(1);
+        $http.get(`${path}/survey/details?${query}`)
             .then(function (res) {
                 ctrl.formData = res.data;
                 ctrl.builderMode = true;
             });
     }
+    ctrl.getFormData();
 
     ctrl.resetBuilder = function () {
         if (ctrl.formBuilder.reset) {
@@ -126,18 +110,18 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
         }
     };
 
-    ctrl.saveFormBuilder = function () {
+    ctrl.submitForm = function () {
+        console.log(ctrl.getMerged())
         var req = {
             method: 'POST',
-            url: `${path}/survey/build`,
-            // headers: {
-            //   'Content-Type': 'text/plain'
-            // },
+            url: `${path}/survey/visiblyCampaign/register`,
             data: {
                 data: JSON.stringify(ctrl.getMerged()).toString()
             }
-           }
-        $http(req)
+        }
+        $http(req).then(function(response) {console.log(response)
+            window.location.href = '/thanks.html';
+        })
     }
 
     $scope.$watch(function (scope) { return scope.ctrl.formData }, function (newValue, oldValue) {

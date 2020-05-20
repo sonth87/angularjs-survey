@@ -71,7 +71,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', function ($rootSc
 
                     type=mwFormBuilderOptions.elementTypes[0];
                 }
-                var element = createEmptyElement(type, ctrl.formPage.elements.length + 1);console.log(element)
+                var element = createEmptyElement(type, ctrl.formPage.elements.length + 1);
                 ctrl.activeElement=element;
                 ctrl.formPage.elements.push(element);
             };

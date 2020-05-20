@@ -27,7 +27,6 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
         controller: function($timeout,FormQuestionBuilderId, mwFormBuilderOptions){
             var ctrl = this;
 
-
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
             ctrl.$onInit = function() {

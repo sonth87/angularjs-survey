@@ -17,8 +17,7 @@ angular.module('mwFormBuilder').directive('mwFormList', function ($rootScope) {
             };
 
             ctrl.editSurvey = function (survey) {
-                $scope.$parent.ctrl.formData = Object.assign({}, survey);
-                $scope.$parent.ctrl.builderMode = true;
+                $scope.$parent.ctrl.getFormData(survey.surveyCode);
             }
 
             ctrl.addNewSurvey = function () {

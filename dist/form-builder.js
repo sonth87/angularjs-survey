@@ -598,7 +598,6 @@ angular.module('mwFormBuilder').factory("FormQuestionBuilderId", function(){
         controller: ["$timeout", "FormQuestionBuilderId", "mwFormBuilderOptions", function($timeout,FormQuestionBuilderId, mwFormBuilderOptions){
             var ctrl = this;
 
-
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
             ctrl.$onInit = function() {
@@ -969,7 +968,7 @@ angular.module('mwFormBuilder').directive('mwFormPageBuilder', ["$rootScope", fu
 
                     type=mwFormBuilderOptions.elementTypes[0];
                 }
-                var element = createEmptyElement(type, ctrl.formPage.elements.length + 1);console.log(element)
+                var element = createEmptyElement(type, ctrl.formPage.elements.length + 1);
                 ctrl.activeElement=element;
                 ctrl.formPage.elements.push(element);
             };
@@ -1123,8 +1122,7 @@ angular.module('mwFormBuilder').directive('mwFormList', ["$rootScope", function 
             };
 
             ctrl.editSurvey = function (survey) {
-                $scope.$parent.ctrl.formData = Object.assign({}, survey);
-                $scope.$parent.ctrl.builderMode = true;
+                $scope.$parent.ctrl.getFormData(survey.surveyCode);
             }
 
             ctrl.addNewSurvey = function () {

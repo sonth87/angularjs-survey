@@ -133,7 +133,7 @@ angular.module('mwFormViewer').directive('mwFormViewer', ["$rootScope", function
         templateUrl: '/mw-form-viewer.html',
         controllerAs: 'ctrl',
         bindToController: true,
-        controller: ["$timeout", "$interpolate", function($timeout, $interpolate){
+        controller: ["$scope", "$timeout", "$interpolate", function($scope, $timeout, $interpolate){
             var ctrl = this;
             // Put initialization logic inside `$onInit()`
             // to make sure bindings have been initialized.
@@ -206,7 +206,7 @@ angular.module('mwFormViewer').directive('mwFormViewer', ["$rootScope", function
                     ctrl.submitStatus='ERROR';
                 });
 
-
+                $scope.$parent.ctrl.submitForm();
             };
 
             ctrl.setCurrentPage = function (page) {
