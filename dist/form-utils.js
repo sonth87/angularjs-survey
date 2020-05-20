@@ -34,7 +34,8 @@ angular.module('mwFormUtils.responseUtils', [])
             return service.$getObjectByIdMap(question.offeredAnswers, function (offeredAnswer) {
                 return {
                     id: offeredAnswer.id,
-                    value: offeredAnswer.value
+                    value: offeredAnswer.value,
+                    uniqueCode: offeredAnswer.uniqueCode
                 };
             });
         };
@@ -53,6 +54,10 @@ angular.module('mwFormUtils.responseUtils', [])
             if (questionResponse.other) {
                 result.other = questionResponse.other;
             }
+
+            // question.
+            // result.uniqueCode = '';
+            console.log(result)
             return result;
         };
 
