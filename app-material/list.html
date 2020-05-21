@@ -52,7 +52,7 @@
     <md-content>
         <md-content class="md-padding tab-content" ng-if="!ctrl.builderMode">
             <div layout="row" layout-align="center">
-                <div flex-gt-sm="66" flex-sm="90">
+                <div flex-gt-sm="66" flex-sm="90" class="container">
                     <mw-form-list list-survey="ctrl.listSurvey"></mw-form-list>
                 </div>
             </div>
@@ -60,7 +60,7 @@
 
         <md-content class="md-padding tab-content" ng-if="ctrl.builderMode">
             <div layout="row" layout-align="center">
-                <div flex-gt-sm="66" flex-sm="90" class="form-container">
+                <div flex-gt-sm="66" flex-sm="90" class="container form-container">
                     <md-button class="md-raised md-primary builder-back-btn" aria-label="Back" ng-click="ctrl.backToList()">
                         <i class="fa fa-chevron-left" aria-hidden="true"></i>
                     </md-button>

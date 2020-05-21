@@ -79,12 +79,12 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
     ctrl.showResponseRata = false;
     ctrl.saveResponse = function () {
         var d = $q.defer();
-        var res = confirm("Response save success?");
-        if (res) {
+        // var res = confirm("Response save success?");
+        // if (res) {
             d.resolve(true);
-        } else {
-            d.reject();
-        }
+        // } else {
+        //     d.reject();
+        // }
         return d.promise;
     };
 

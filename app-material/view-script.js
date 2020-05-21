@@ -61,12 +61,12 @@ app.controller('AppViewerController', function ($scope, $q, $http, $translate, m
     ctrl.showResponseRata = false;
     ctrl.saveResponse = function () {
         var d = $q.defer();
-        var res = confirm("Response save success?");
-        if (res) {
+        // var res = confirm("Response save success?");
+        // if (res) {
             d.resolve(true);
-        } else {
-            d.reject();
-        }
+        // } else {
+        //     d.reject();
+        // }
         return d.promise;
     };
 
@@ -111,7 +111,6 @@ app.controller('AppViewerController', function ($scope, $q, $http, $translate, m
     };
 
     ctrl.submitForm = function () {
-        console.log(ctrl.getMerged())
         var req = {
             method: 'POST',
             url: `${path}/survey/visiblyCampaign/register`,
@@ -119,8 +118,12 @@ app.controller('AppViewerController', function ($scope, $q, $http, $translate, m
                 data: JSON.stringify(ctrl.getMerged()).toString()
             }
         }
-        $http(req).then(function(response) {console.log(response)
-            window.location.href = '/thanks.html';
+        $http(req).then(function(response) {
+            if(response.status === '200') {
+                window.location.href = '/thanks.html';
+            } else {
+                window.location.href = '/error.html';
+            }
         })
     }
 

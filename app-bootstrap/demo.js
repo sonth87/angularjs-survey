@@ -55,12 +55,12 @@ angular.module('app', ['ui.bootstrap', 'mwFormBuilder', 'mwFormViewer', 'mwFormU
         ctrl.showResponseRata=false;
         ctrl.saveResponse = function(){
             var d = $q.defer();
-            var res = confirm("Response save success?");
-            if(res){
+            // var res = confirm("Response save success?");
+            // if(res){
                 d.resolve(true);
-            }else{
-                d.reject();
-            }
+            // }else{
+            //     d.reject();
+            // }
             return d.promise;
         };
 
