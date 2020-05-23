@@ -23,7 +23,7 @@ app.controller('AppViewerController', function ($scope, $q, $http, $translate, m
     ctrl.listSurvey = [];
     ctrl.status = 'NEW'; // 'NEW' | 'APPROVED' | 'UNAPPROVED'
     ctrl.builderMode = false;
-    path = 'https://10.124.55.78:9002/partner/v2';
+    path = 'https://backoffice-commerce-sandbox.int.vinid.dev/partner/v2';
 
     ctrl.selectedTabIndex = 0;
     ctrl.formBuilder = {};

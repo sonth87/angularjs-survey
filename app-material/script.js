@@ -34,7 +34,7 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
     ctrl.listSurvey = [];
     ctrl.status = 'NEW'; // 'NEW' | 'APPROVED' | 'UNAPPROVED'
     ctrl.builderMode = false;
-    path = 'https://10.124.55.78:9002/partner/v2';
+    path = 'https://backoffice-commerce-sandbox.int.vinid.dev/partner/v2';
 
     setTimeout(function () {
         $http.get(`${path}/survey/list`)
@@ -137,7 +137,10 @@ app.controller('AppController', function ($scope, $q, $http, $translate, mwFormR
                 data: JSON.stringify(ctrl.getMerged()).toString()
             }
            }
-        $http(req)
+        $http(req).then(function() {
+            alert('Cập nhật thành công!')
+            ctrl.backToList();
+        })
     }
 
     $scope.$watch(function (scope) { return scope.ctrl.formData }, function (newValue, oldValue) {

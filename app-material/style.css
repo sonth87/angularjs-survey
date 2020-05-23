@@ -7,8 +7,9 @@ body {
 }
 
 .tab-content {
-  background-color: #e4e5e6;
+  background-color: #fff;
   min-height: 100vh;
+  padding: 0;
 }
 
 .nav-tabs > li.active > a,
@@ -21,4 +22,57 @@ body {
 .md-login-modal {
   max-width: 90%;
   width: 500px;
+}
+
+.mw-form-viewer {
+  background-color: #ffffff;
+  padding: 0;
+  margin-bottom: 70px;
+}
+
+.form-title {
+  display: none;
+}
+
+.mw-form-viewer .mw-form-page {
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+.mw-form-action-list {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px -3px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.mw-form-action-list button {
+  width: calc(100% - 16px);
+}
+
+.mw-page-element:not(.hidden-element) {
+  border-bottom: solid 8px #f5f6f7;
+}
+
+.mw-form-viewer .mw-form-page .mw-page-element:not(.hidden-element) {
+  margin-bottom: 0px;
+  padding: 12px;
+}
+
+.mw-form-viewer .mw-form-page .mw-page-element .mw-question-text {
+  font-size: 16px;
+}
+
+.message {
+  background: #ffff;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.message-content {
+  border-radius: 8px;
+  background: #eaf0ff;
+  padding: 10px;
+  font-size: 14px;
 }
